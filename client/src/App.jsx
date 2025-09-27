@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 function App() {
 
     useEffect(() => {
-        fetch('/health').then(res => {
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/health`).then(res => {
             if (res.ok) {
                 console.log('Server is healthy');
             } else {
