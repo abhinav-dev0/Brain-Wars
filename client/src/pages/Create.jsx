@@ -14,7 +14,7 @@ const Create = () => {
     const { resetQuiz } = useScoreStore()
 
     const [topic, setTopic] = useState("")
-    const [length, setLength] = useState("10")
+    const [length, setLength] = useState("5")
     const [level, setLevel] = useState("Easy")
     const [quizId, setQuizId] = useState("")
 
@@ -53,7 +53,7 @@ const Create = () => {
             {
                 username ?
                     <div>
-                        <div className='flex flex-col sm:w-[50%] my-4 m-auto gap-2 border-2 p-4 rounded-md !bg-gray-950'>
+                        <div className='flex flex-col sm:w-[50%] my-4 m-auto gap-2 border-2 p-4 rounded-md !bg-slate-950'>
                             <h1>Join a Quiz</h1>
                             <label htmlFor="">Enter quiz id</label>
                             <input type="text" placeholder='12345' value={quizId} onChange={(e) => { setQuizId(e.target.value) }} />
@@ -68,7 +68,7 @@ const Create = () => {
                                 }
                             }}>Join Now</button>
                         </div>
-                        <div className='flex flex-col sm:w-[50%] m-auto gap-2 border-2 p-4 rounded-md mt-8 !bg-gray-950'>
+                        <div className='flex flex-col sm:w-[50%] m-auto gap-2 border-2 p-4 rounded-md mt-8 !bg-slate-950'>
                             <h1>Create New Quiz</h1>
                             <label htmlFor="">Enter topic for quiz</label>
                             <input type="text" name="" id="" value={topic} onChange={(e) => { setTopic(e.target.value) }} />
@@ -82,7 +82,7 @@ const Create = () => {
                             <select name="length" id="" value={length} onChange={(e) => { setLength(e.target.value) }}>
                                 <option value="5">5</option>
                                 <option value="10">10</option>
-                                <option value="15">15</option>
+                                <option value="15">20</option>
                             </select>
                             <button
                                 onClick={() => { createQuiz() }}

@@ -18,13 +18,13 @@ const Home = () => {
         <h2>Create a quiz or join one instantly.</h2> 
         <h2>Chat live, and compete for the top spot.</h2>
         <h2>Correct answers at end.</h2>
-        <img src={`${photo}.png`} alt="" width={"700px"} className='mx-auto border-2 p-1 rounded-xl h-[350px]' />
+        <img src={`${photo}.png`} alt="" width={"700px"} className='mx-auto border-2 p-1 rounded-xl h-[350px] transition' />
         <button
             className='self-center !bg-green-900 hover:!bg-green-950 md:block'
             onClick={() => {
                 navigate('/create')
             }}
-        >Start Playing Now</button>
+        >Play Now</button>
     </div>;
 };
 

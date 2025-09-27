@@ -7,8 +7,8 @@ const NavBar = () => {
     const [open, setOpen] = useState(false)
     return (
         <div className='flex items-center justify-around flex-col sm:flex-row gap-2 my-2'>
-            <h1 className='hover:cursor-pointer pt-2 !text-amber-300 hover:!text-amber-600' 
-            onClick={() => { navigate('/') }}>IDK-Man 😎</h1>
+            <h1 className='hover:cursor-pointer pt-2 !text-amber-300 hover:!text-amber-600'
+            onClick={() => { navigate('/') }}>IDK-Man 🤔</h1>
             <button className='sm:hidden' onClick={()=>setOpen(!open)}>
                 {!open ? '☰' : 'X'}</button>
             {

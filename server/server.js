@@ -23,6 +23,10 @@ server.listen(PORT, () => {
 	console.log(`Socket IO Server is running on PORT : ${PORT}`);
 });
 
+app.use('/health', (req, res) => {
+	res.status(200).send('OK');
+});
+
 const users = {};
 
 const quizes = {};

@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 
-body {
-    @apply bg-gray-900 text-amber-200 font-[Inter] p-0 m-0
+html, body {
+    @apply text-amber-200 font-[Inter] p-0 m-0 bg-gradient-to-b to-slate-800 from-slate-950 via-slate-900 min-h-screen
 }
 
 button {

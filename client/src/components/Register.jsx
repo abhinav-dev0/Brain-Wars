@@ -6,7 +6,7 @@ const Register = () => {
     const { setUsername } = useUserStore()
     const [name, setName] = useState("")
     return (
-        <div className='flex flex-col w-[40%] m-auto gap-4 border-2 p-4 rounded-md my-8'>
+        <div className='flex flex-col w-[40%] m-auto gap-4 border-2 p-4 rounded-md my-8 bg-slate-900'>
             <h1 className='my-4'>Welcome to IDK-Man</h1>
             <div>
                 Enter your username
