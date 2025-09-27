@@ -8,12 +8,14 @@ import { redirect, useNavigate } from 'react-router-dom'
 const QuizBox = () => {
     const [data, setData] = useState(null)
     const [isDisabled, setIsDisabled] = useState(false)
+    const [timeLeft, setTimeLeft] = useState(0)
     const { username } = useUserStore()
     const navigate = useNavigate()
     useEffect(() => {
         socket.on('new-question', (question) => {
             setData(question)
             setIsDisabled(false)
+            setTimeLeft(30)
         })
 
         return () => {
@@ -32,11 +34,24 @@ const QuizBox = () => {
             socket.off('quiz-end');
         }
     }, [])
+
+    useEffect(() => {
+        if (timeLeft === 0) return 
+        if (!data) return
+        const timer = setInterval(() => {
+            setTimeLeft((prev) => prev - 1)
+        }, 1000)
+        return () => clearInterval(timer)
+    }, [timeLeft, data])
+
     return (
         <div className='lg:w-[50%] border-2 p-4'>
             <h1>Quiz</h1>
             {data ? <div className='flex flex-col gap-4'>
-                <div>Question number : {data.id}</div>
+                <div className='flex justify-between'>
+                    <div>Question : {data.id}</div>
+                    <div>Time Left : {timeLeft} s</div>
+                </div>
                 <h1 className='!text-start'>{data.question}</h1>
                 <button disabled={isDisabled} onClick={() => {
                     setIsDisabled(true)

@@ -23,7 +23,7 @@ const ScoreCard = () => {
                     <ul className='list-image-none'>
                         {
                             scores.sort((a, b) => b.score - a.score).map((data, i) => {
-                                return <li className=''><h2>{i + 1} - {data.username.toUpperCase()} -- {data.score}</h2></li>
+                                return <li className=''><h2># {i + 1}  {data.username.toUpperCase()} : {data.score}</h2></li>
                             })
                         }
                     </ul>

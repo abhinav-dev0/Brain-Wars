@@ -5,12 +5,23 @@ import Quiz from './pages/Quiz';
 import Create from './pages/Create';
 import Result from './pages/Result';
 import NavBar from './components/NavBar';
+import { useEffect } from 'react';
 
 function App() {
 
+    useEffect(() => {
+        fetch('/health').then(res => {
+            if (res.ok) {
+                console.log('Server is healthy');
+            } else {
+                console.error('Server health check failed');
+            }
+        })
+    }, [])
+
     return (
         <BrowserRouter>
-            <div className='flex flex-col justify-between h-[100vh]'>
+            <div className='flex flex-col justify-between min-h-screen'>
                 <Toaster position='top-center' />
                 <NavBar />
                 <div className='flex-grow'>
