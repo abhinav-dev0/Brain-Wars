@@ -43,7 +43,7 @@ function App() {
                     />
                 </Routes>
                 </div>
-                <div className='text-center my-4'>Copyright © 2025 IDK-Man. All rights reserved.</div>
+                <div className='text-center my-4'>Copyright © 2025 Brain Worse. All rights reserved.</div>
             </div>
         </BrowserRouter>
     );
